@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/home.css">
+  
+  <title>Todo List</title>
+
+</head>
+<body>
+    <div id="container">
+      <h1 class="light-color">Todo List</h1>
+        <form id="myform" method="POST" action="/add-task">
+          <label class="light-color" for="task_input" >Description</label>
+          <input id="task_input" type="text" name="taskName" placeholder="What do you want to do?" required><br>
+         <div class="for-adding-equal-border">
+          <div class="category-select">
+            <label for="category" class="label-for-diffrent-input-type light-color">Category</label>
+            <select id="category"  name="category">
+              <option value="" selected disabled>Choose a category</option>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+              <option value="Shopping">Shopping</option>
+            </select>
+           </div>
+            <div class="date-input">
+              <label for="date" class="label-for-diffrent-input-type light-color">Due Date</label>
+              <input id="date"  type="date" name="dueDate" required>
+            </div>
+         </div>
+           
+        </form>
+        <div class="btn-input">
+          <input form="myform" id="add-task-btn" type="submit" value="Add Task +">
+         <button action="/delete" id="delete-btn" >Delete</button>
+       </div>   
+        
+      </div>
+<script src="/js/home.js"></script>
+</body>
+</html>
