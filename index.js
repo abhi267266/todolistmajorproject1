@@ -6,9 +6,12 @@ const app = express();
 app.use('/', require('./routes'))
 app. set('view engine', 'ejs');
 app.set('views', './views');
+const db = require("./config/mongoose");
+const Task = require("./model/task.js");
 
 app.use(express.urlencoded());
 app.use(express.static('asset'));
+
 
 app.listen(8000, (err)=>{
     if(err){
