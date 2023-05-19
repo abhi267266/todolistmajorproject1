@@ -9,7 +9,10 @@ body {
 
 #container {
   width: 50%; 
-  margin: 0 auto;
+  height: auto;
+  scroll-behavior: smooth;
+  position: absolute;
+  top: 10px;
 }
 
 #add_task_btn{
@@ -75,10 +78,14 @@ label.label-for-diffrent-input-type{
   justify-content: center;
 }
 
-#add-task-btn,#delete-btn{
+#add-task-btn{
+  all:inherit;
+  color:white;
+  background-color:rgb(60, 177, 13);
   width: 20%;
   height: 50px;
-  font-size: 25px;
+  font-size: 100%;
+  font-weight: 900;
   margin: 5px;
 }
 
@@ -98,4 +105,81 @@ label.label-for-diffrent-input-type{
   border-left: 2px solid #000;
   border-bottom: 2px solid #000;
   pointer-events: none;
+}
+
+ul#task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul#task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+ul#task-list li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+ul#task-list li .task-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+ul#task-list li .task-info p {
+  margin: 0;
+}
+
+ul#task-list li i.fas.fa-trash {
+  color: red;
+}
+
+li{
+  border: 1px solid black;
+  padding: 5px 15px 5px 15px ;
+}
+
+p.category-para{
+  text-align: center;
+  padding: 5px;
+  color:white;
+}
+
+p.category-work{
+  background-color: red;
+
+}
+
+p.category-personal{
+  background-color:green;
+}
+
+p.category-shopping{
+  background-color: blue;
+
+}
+p.category-default{
+  background-color: red;
+}
+
+@media (max-width: 768px) {
+  #container {
+    width: 90%;
+  }
+  
+  .category-select,
+  .date-input {
+    width: 100%;
+  }
+  
+  #add-task-btn {
+    width: 100%;
+  }
 }

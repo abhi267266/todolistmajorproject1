@@ -1,4 +1,5 @@
 const Task = require("../model/task.js");
+const currDate = require('../asset/js/current_date.js');
 
 module.exports.addTask = async(req, res) => {
 
@@ -12,12 +13,20 @@ module.exports.addTask = async(req, res) => {
       dueDate:dueDate,
     });
 
+    //checks date
+    
+
     // Save the new task to the database
     await newTask.save();
 
     res.redirect('back')
   } catch (error) {
-    res.status(500).json({ error: 'Error occurred while adding task' });
+    if(dueDate < currDate){
+      console.log("This is an alert message!");
+      return res.redirect('back');
+    }else{
+      res.status(500).json({ error: 'Error occurred while adding task' });
+    }
   }
 }
 // try {
